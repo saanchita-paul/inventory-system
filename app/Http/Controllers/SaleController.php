@@ -12,7 +12,7 @@ class SaleController extends Controller
 {
     public function create()
     {
-        $products = Product::get();
+        $products = Product::all();
         return view('sales.create', compact('products'));
     }
 
@@ -65,7 +65,7 @@ class SaleController extends Controller
             ['sale_id' => $sale->id, 'type' => 'payment', 'amount' => $data['paid_amount']],
         ]);
 
-        return redirect()->back();
+        return redirect()->route('reports.index');
     }
 
 }
