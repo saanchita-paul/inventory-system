@@ -12,6 +12,17 @@ class StoreSaleRequest extends FormRequest
         return true;
     }
 
+    public function prepareForValidation(): void
+    {
+        $filtered = collect($this->input('products'))
+            ->filter(fn ($item) => isset($item['quantity']) && $item['quantity'] > 0)
+            ->values()
+            ->toArray();
+
+        $this->merge([
+            'products' => $filtered
+        ]);
+    }
 
     public function rules(): array
     {
