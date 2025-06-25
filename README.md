@@ -81,7 +81,7 @@ Copy the example .env file:
 php artisan key:generate
 php artisan migrate --seed
 ```
-This will also create a default admin user.
+This will also create a default admin user and seed default product.
 
 ### Step 5: Serve the Application
 ```bash
