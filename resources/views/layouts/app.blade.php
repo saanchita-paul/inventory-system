@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Inventory') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -43,7 +43,7 @@
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="sidebar pl-5 pr-5">
-            <h4>Inventory</h4>
+            <a href="{{ route('dashboard') }}" class="font-bold text-2xl" style="background-color: transparent !important;" >Inventory</a>
             <a href="{{ route('products.index') }}" class="{{ request()->is('products*') ? 'active' : '' }} mt-5">Products</a>
             <a href="{{ route('sales.create') }}" class="{{ request()->is('sales*') ? 'active' : '' }} mt-2">Sales</a>
             <a href="{{ route('reports.index') }}" class="{{ request()->is('reports*') ? 'active' : '' }} mt-2">Reports</a>
