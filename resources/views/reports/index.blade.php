@@ -25,6 +25,11 @@
             <div class="col-md-3"><strong>Total Paid:</strong> {{ number_format($totalPaid, 2) }} TK</div>
         </div>
 
+        <div class="row mb-4">
+            <div class="col-md-3"><strong>Total Expense:</strong> {{ number_format($totalExpense, 2) }} TK</div>
+            <div class="col-md-3"><strong>Profit:</strong> {{ number_format($profit, 2) }} TK</div>
+        </div>
+
         <h5>Sales Entries</h5>
         <table class="table table-bordered">
             <thead>

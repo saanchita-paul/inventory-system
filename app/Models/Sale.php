@@ -13,4 +13,9 @@ class Sale extends Model
         'paid_amount',
         'due_amount'
     ];
+    public function items()
+    {
+        return $this->hasMany(SaleItem::class);
+    }
+
 }

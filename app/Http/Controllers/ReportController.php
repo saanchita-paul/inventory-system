@@ -19,7 +19,18 @@ class ReportController extends Controller
         $totalPaid = $sales->sum('paid_amount');
         $totalDue = $sales->sum('due_amount');
 
-        return view('reports.index', compact('sales', 'totalSales', 'totalDiscount', 'totalVat', 'totalPaid', 'totalDue', 'from', 'to'));
-    }
+        $totalExpense = 0;
+        foreach ($sales as $sale) {
+            foreach ($sale->items as $item) {
+                $totalExpense += $item->quantity * $item->product->purchase_price;
+            }
+        }
+
+        $profit = $totalSales - $totalDiscount - $totalExpense;
+
+        return view('reports.index', compact(
+            'sales', 'totalSales', 'totalDiscount', 'totalVat', 'totalPaid', 'totalDue',
+            'totalExpense', 'profit', 'from', 'to'
+        ));    }
 
 }
