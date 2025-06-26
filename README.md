@@ -97,3 +97,11 @@ Email: admin@gmail.com
 Password: password
 
 ```
+
+## Debugging & Monitoring
+Laravel Telescope is installed and available at:
+
+```bash
+http://localhost:8000/telescope
+```
+Use it for debugging queries, exceptions, requests, logs, and more.
